@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Call - AtomQuest Video Support</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="banner" class="banner">Connecting...</div>
+  <div class="room">
+    <div class="stage">
+      <div class="videos">
+        <div class="tile">
+          <video id="localVideo" autoplay muted playsinline></video>
+          <div class="name"><span id="localDot" class="dot"></span><span id="localName">You</span></div>
+        </div>
+        <div class="tile" id="remoteTile">
+          <div class="placeholder" id="remotePlaceholder">Waiting for the other participant to join...</div>
+          <video id="remoteVideo" autoplay playsinline style="display:none"></video>
+          <div class="name" id="remoteNameBox" style="display:none"><span id="remoteDot" class="dot"></span><span id="remoteName">Peer</span></div>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="muteBtn" class="ghost">Mute</button>
+        <button id="videoBtn" class="ghost">Stop video</button>
+        <button id="recBtn" class="ghost" style="display:none">Start recording</button>
+        <span id="recStatus" class="rec-status"></span>
+        <button id="endBtn" class="danger">End call</button>
+      </div>
+    </div>
+
+    <div class="side">
+      <header><strong>In-call chat</strong></header>
+      <div class="chat-log" id="chatLog"></div>
+      <div class="chat-input">
+        <button id="fileBtn" class="icon-btn" title="Share a file">+</button>
+        <input type="file" id="fileInput" style="display:none" accept="image/*,.pdf,.doc,.docx,.txt">
+        <input type="text" id="chatText" placeholder="Type a message">
+        <button id="sendBtn" class="small">Send</button>
+      </div>
+    </div>
+  </div>
+  <script src="/room.js"></script>
+</body>
+</html>

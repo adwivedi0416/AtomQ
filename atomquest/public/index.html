@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AtomQuest Video Support</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- LOGIN / ROLE SELECT -->
+  <div id="loginView" class="center">
+    <div class="card narrow">
+      <h1>AtomQuest Video Support</h1>
+      <p class="sub">Self-hosted, server-routed video support sessions.</p>
+
+      <div class="row" style="margin-bottom:16px">
+        <button id="tabAgent" class="small">Agent sign in</button>
+        <button id="tabCustomer" class="small ghost">Join with invite</button>
+      </div>
+
+      <div id="agentForm">
+        <label>Username</label>
+        <input id="username" value="agent" autocomplete="username">
+        <label>Password</label>
+        <input id="password" type="password" value="agent123" autocomplete="current-password">
+        <div style="margin-top:18px"><button id="loginBtn" style="width:100%">Sign in</button></div>
+        <p class="muted" style="font-size:12px;margin-top:12px">Demo agent: <span class="mono">agent / agent123</span></p>
+      </div>
+
+      <div id="customerForm" style="display:none">
+        <label>Your name</label>
+        <input id="custName" placeholder="e.g. Priya">
+        <label>Invite link or code</label>
+        <input id="custInvite" placeholder="Paste the link the agent sent">
+        <div style="margin-top:18px"><button id="joinBtn" style="width:100%">Join session</button></div>
+      </div>
+
+      <div class="error" id="loginError"></div>
+    </div>
+  </div>
+
+  <!-- AGENT DASHBOARD -->
+  <div id="dashView" style="display:none">
+    <div class="wrap">
+      <div class="spread" style="margin-bottom:20px">
+        <div>
+          <h1>Agent Dashboard</h1>
+          <p class="sub" id="welcome"></p>
+        </div>
+        <div class="row">
+          <button id="newSessionBtn">+ New session</button>
+          <button id="logoutBtn" class="ghost small">Sign out</button>
+        </div>
+      </div>
+
+      <div id="inviteCard" class="card" style="display:none;margin-bottom:20px">
+        <div class="spread">
+          <h2 style="margin:0">Session created</h2>
+          <button id="enterCallBtn" class="small">Enter call as agent</button>
+        </div>
+        <p class="muted" style="margin:8px 0 0">Share this link with the customer:</p>
+        <div class="invite-box mono" id="inviteLink"></div>
+        <div class="row" style="margin-top:10px">
+          <button id="copyInviteBtn" class="small ghost">Copy link</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="spread" style="margin-bottom:8px">
+          <h2 style="margin:0">Sessions</h2>
+          <button id="refreshBtn" class="small ghost">Refresh</button>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Title</th><th>Status</th><th>Live</th><th>Started</th><th>Duration</th><th>Recording</th><th></th></tr>
+          </thead>
+          <tbody id="sessionRows"><tr><td colspan="7" class="muted">No sessions yet.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

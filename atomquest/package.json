@@ -1,0 +1,17 @@
+{
+  "name": "atomquest-video-support",
+  "version": "1.0.0",
+  "description": "Self-hosted real-time video support platform. Media routes through the application server over WebSocket. No P2P, no third-party video APIs.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ws": "^8.18.0"
+  }
+}
